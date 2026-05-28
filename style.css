@@ -4,5 +4,22 @@ body {
 #enemycontainer {
   color: aliceblue;
   margin-left: 50%;
-  
+}
+#grassButton {
+  margin: 10px;
+}
+
+#playercontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+}
+#enemycontainer img,
+#playercontainer img {
+  border-radius: 10px;
+  border: 3px solid white;
 }

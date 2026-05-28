@@ -1,4 +1,5 @@
 const player = {
+  name: "Player",
   pokeballs: 10,
   rocks: 10,
   image: "images/player.jpg",
@@ -27,12 +28,34 @@ const pokemon = [
     image: "images/Totodile.jpg",
   },
 ];
+const playercontainer = document.getElementById("playercontainer");
 const enemyContainer = document.getElementById("enemycontainer");
-
+const playerinfo = document.getElementById("playerinfo");
 const grassButton = document.getElementById("grassButton");
 const rockButton = document.getElementById("rockButton");
 
 let currentPokemon = null;
+function renderPlayer() {
+  playerinfo.textContent = "";
+
+  const name = document.createElement("h2");
+  name.textContent = player.name;
+
+  const rocks = document.createElement("p");
+  rocks.textContent = `Rocks: ${player.rocks}`;
+
+  const pokeballs = document.createElement("p");
+  pokeballs.textContent = `Pokeballs: ${player.pokeballs}`;
+
+  const image = document.createElement("img");
+  image.src = player.image;
+  image.width = 200;
+
+  playerinfo.appendChild(name);
+  playerinfo.appendChild(rocks);
+  playerinfo.appendChild(pokeballs);
+  playerinfo.appendChild(image);
+}
 
 grassButton.addEventListener("click", () => {
   const randomNumber = Math.floor(Math.random() * pokemon.length);
@@ -97,3 +120,4 @@ function throwRock() {
     alert(`${currentPokemon.name} fainted!`);
   }
 }
+renderPlayer();
